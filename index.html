@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="ru" prefix="og: http://ogp.me/ns#">
 
 <head>
@@ -8,34 +9,36 @@
     <meta property="og:site_name" content="Главная">
     <meta property="og:type" content="website">
     <link
-        href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&amp;family=Caveat:wght@400;700&amp;family=Comfortaa:wght@300;400;500;600;700&amp;family=Kelly+Slab&amp;family=Lobster&amp;family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&amp;family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&amp;family=Oswald:wght@200;300;400;500;600;700&amp;family=PT+Mono&amp;family=Pacifico&amp;family=Pangolin&amp;family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap"
+        href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Caveat:wght@400;700&family=Comfortaa:wght@300;400;500;600;700&family=Kelly+Slab&family=Lobster&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&family=Oswald:wght@200;300;400;500;600;700&family=PT+Mono&family=Pacifico&family=Pangolin&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
     <link href="style.css" rel="stylesheet">
     <link rel="icon" href="img/photo_2024-09-26_21-57-57.png" type="image/x-icon">
-    <!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();
-   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-   ym(100088565, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true
-   });
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/100088565" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
     <style>
-        .epic{
+        .epic {
             color: rgb(173, 115, 255)
         }
-        .whited{
+
+        .whited {
             background-color: rgb(255, 255, 255);
             border-radius: 10px;
         }
+
+        .info {
+            color: rgb(209, 209, 209);
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        .original-text {
+            margin-top: 10px;
+            /* Отступ между кнопкой и текстом */
+        }
+
+        .hidden {
+            display: none;
+        }
+        
         .red{
             color: rgb(230, 69, 69)
         }
@@ -47,43 +50,55 @@
         <div class="p-fC3">
             <div>
                 <div class="a-fC3-a">
-                    <p>Домашнее задание на 9 сентября (Вторник).</p>
+                    <p>ТЕХНИЧЕСКИЕ РАБОТЫ!</p>
                 </div> <!----> <!---->
             </div>
             <div>
                 <div class="a-fC3-b">
                     <!---->
-                    <p>1. 📚 Литература [1131]</p>
-                    <p>Выучить записи в тетради (что такое фольклор, особенности фольклора, что такое былина, циклы былин)</p>
+                    <p>1. 📝 Практикум по русскому языку [1131]</p>
+                    <p>Не задано ^_^ <button class="info">(🛈)</button></p>
+                    <p class="hidden original-text"><i>не задано</i></p>
                     <br>
-                    <p>2. ⚽ Физическая культура [1103]</p>
-                    <p>Не задано ^_^</p>
+                    <p>2. 📝 Русский язык [1131]</p>
+                    <p>ДЗ <button class="info">(🛈)</button></p>
+                    <p class="hidden original-text">Оригинальный текст по русскому языку</p>
                     <br>
-                    <p>3. 🧬 Биология [422]</p>
-                    <p>Не задано ^_^</p>
+                    <p>3. 📘 Литература [1131]</p>
+                    <p>ДЗ <button class="info">(🛈)</button></p>
+                    <p class="hidden original-text">Оригинальный текст по литературе</p>
                     <br>
-                    <p>4. 📝 Русский язык [1131]</p>
-                    <p>Выполнить письменно упражнение 36 (объяснить орфограммы)</p>
-                    <br>
-                    <p>5. 📗 Математика [415]</p>
-                    <p>Не задано ^_^</p>
-                    <br>
-                    <p>6. 🗂 История [243]</p>
-                    <p>Параграф 2 читать, термины учить. Изучить прикрепленную презентацию, выписать из нее определения мозаика, фреска. Подробно рассмотреть крестово-купольный храм, перенести в тетрадь план-схему крестово-купольного храма. ЦДЗ.</p>
-                    <b><a href="https://disk.yandex.ru/i/ENvPd8PjFeEwdQ">Открыть прикреплённый файл</a></b>
-                    
+                    <p>4. 🗂 История [БИЦ]</p>
+                    <p>Посмотреть прикрепленный файл <button class="info">(🛈)</button></p>
+                    <b><a href="#">Открыть прикрепленный файл</a></b>
+                    <p class="hidden original-text"><i>Скрытый оригинальный текст<br><a href="#">Скачать</a></i></p>
+                    <br><br>
+                    <p>5. 📐 Введение в геометрию [415]</p>
+                    <p>ДЗ <button class="info">(🛈)</button></p>
+                    <p class="hidden original-text">Оригинальный текст по геометрии</p>
                 </div>
-                
-                            </div>
+
+            </div>
         </div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const buttons = document.querySelectorAll('.info');
+
+            buttons.forEach((button) => {
+                button.addEventListener('click', function () {
+                    const parentP = this.closest('p');
+                    const hiddenText = parentP.nextElementSibling;
+
+                    if (hiddenText && hiddenText.classList.contains('hidden')) {
+                        hiddenText.classList.remove('hidden');
+                    } else {
+                        hiddenText.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
-
-
-
-
-
-
-
