@@ -165,3 +165,18 @@ color: '#fff',
 timeout: 0
 });
 });
+document.addEventListener('DOMContentLoaded', function() {
+    // Создаем контейнер для снежинок
+    var container = document.createElement('div');
+    container.className = 'snow-container';
+    document.body.appendChild(container);
+    
+    // Создаем 50 снежинок
+    for(var i = 0; i < 50; i++) {
+        var flake = document.createElement('div');
+        flake.className = 'snow-flake';
+        flake.style.left = Math.random() * 100 + '%';
+        flake.style.animationDuration = (Math.random() * 3 + 2) + 's';
+        container.appendChild(flake);
+    }
+});
