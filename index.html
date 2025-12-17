@@ -32,7 +32,6 @@
 
         .original-text {
             margin-top: 10px;
-            /* Отступ между кнопкой и текстом */
         }
 
         .hidden {
@@ -68,16 +67,16 @@
             <div>
                 <div class="a-fC3-a">
                     <p>Домашнее задание на Четверг (18.12)</p>
-                </div> <!----> <!---->
+                </div>
             </div>
             <div>
                 <div class="a-fC3-b">
                     <!---->
                     <p>❄ Опять весна наступила =(</p>
                     <br>
-                    <p>1. 📙 Труд (технология) [1141]</p>
+                    <p>1. 📙 Труд (технология) [1138]</p>
                     <br>
-                    <p>2. 📒 Труд (технология) [1141]</p>
+                    <p>2. 📒 Труд (технология) [1138]</p>
                     <br>
                     <p>3. 📝 Русский язык [1131]</p>
                     <p>Упражнение 368, орфограммы объяснить</p>
@@ -97,27 +96,10 @@
             </div>
         </div>
     </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const buttons = document.querySelectorAll('.info');
-
-            buttons.forEach((button) => {
-                button.addEventListener('click', function () {
-                    const parentP = this.closest('p');
-                    const hiddenText = parentP.nextElementSibling;
-
-                    if (hiddenText && hiddenText.classList.contains('hidden')) {
-                        hiddenText.classList.remove('hidden');
-                    } else {
-                        hiddenText.classList.add('hidden');
-                    }
-                });
-            });
-        });
-    </script>
 </body>
 
 </html>
+
 
 
 
