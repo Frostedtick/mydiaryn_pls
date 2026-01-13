@@ -355,7 +355,6 @@
                 0 6px 18px rgba(0, 140, 255, .3);
         }
 
-        /* чтобы текст кнопки не попадал в буфер */
         .no-copy {
             user-select: none;
             -webkit-user-select: none;
