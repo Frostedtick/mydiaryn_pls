@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#071a2b" />
+    <link rel="icon" href="icon_site.png" type="image/x-icon">
+    <title>ДневниК FrostD</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="noise" aria-hidden="true"></div>
+
+    <div class="wrap">
+        <div class="card">
+            <header>
+                <div class="brand">
+                    <img class="logo" aria-hidden="true" src="/icon.png">
+                    <div>
+                        <h1>Домашнее задание на Среду (14.01)</h1>
+                        <p class="subtitle">🎉 Завтра будет всемирный день логики! (14.01)</p>
+                    </div>
+                </div>
+                <div class="divider"></div>
+            </header>
+
+            <main>
+                <h2 style="margin:8px 0 12px">Предметы</h2>
+
+                <div class="grid">
+                    <!-- 1 -->
+                    <button class="tile" type="button" data-copy>
+                        <div class="icon" aria-hidden="true">🇬🇧</div>
+                        <div class="meta">
+                            <p class="title">1. Иностранный (английский) язык <span class="chip">к257</span></p>
+                            <p class="hint"><b>Группа Английского "Настя"</b><br>Страница 57 читать текст,
+                                переводить,<br>страница 64 упражнение 2 письменно + 4 своих предложения с каждым
+                                глаголом</p>
+                        </div>
+                    </button>
+
+                    <!-- 2 -->
+                    <button class="tile" type="button" data-copy>
+                        <div class="icon" aria-hidden="true">🎨</div>
+                        <div class="meta">
+                            <p class="title">2. Изобразительное искусство <span class="chip">к1132</span></p>
+                            <p class="hint">Принести материалы для ИЗО</p>
+                        </div>
+                    </button>
+
+                    <!-- 3 -->
+                    <button class="tile" type="button" data-copy>
+                        <div class="icon" aria-hidden="true">📝</div>
+                        <div class="meta">
+                            <p class="title">3. Русский язык <span class="chip">к1131</span></p>
+                            <p class="hint">Упражнение 413</p>
+                        </div>
+                    </button>
+
+                    <!-- 4 -->
+                    <button class="tile" type="button" data-copy>
+                        <div class="icon" aria-hidden="true">📕</div>
+                        <div class="meta">
+                            <p class="title">4. Математика <span class="chip">к415</span></p>
+                            <p class="hint">1 часть страница 79 Проверочная работа 3 №2.<br>Страница 90 №2.344 (1),
+                                страница 102 №2.428 (а)</p>
+                        </div>
+                    </button>
+
+                    <!-- 5 -->
+                    <button class="tile" type="button" data-copy>
+                        <div class="icon" aria-hidden="true">⚽️</div>
+                        <div class="meta">
+                            <p class="title">5. Физическая культура <span class="chip">к1103</span></p>
+                            <p class="hint">Комплекс ОРУ</p>
+                        </div>
+                    </button>
+
+                    <!-- 6 -->
+                    <button class="tile" type="button" data-copy>
+                        <div class="icon" aria-hidden="true">📚</div>
+                        <div class="meta">
+                            <p class="title">6. Математика <span class="chip">к415</span></p>
+                            <p class="hint">1 часть страница 79 Проверочная работа 3 №2.<br>Страница 90 №2.344 (1),
+                                страница 102 №2.428 (а)</p>
+                        </div>
+                    </button>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true">
+        <div class="toastInner">
+            <div class="toastDot" aria-hidden="true"></div>
+            <div>
+                <p class="toastTitle" id="toastTitle">Скопировано</p>
+                <p class="toastText" id="toastText">Информация по предмету скопирована в буфер обмена.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const toast = document.getElementById('toast');
+        const toastTitle = document.getElementById('toastTitle');
+        const toastText = document.getElementById('toastText');
+
+        let toastTimer = null;
+
+        function showToast(title, text) {
+            toastTitle.textContent = title;
+            toastText.textContent = text;
+
+            toast.classList.add('show');
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => toast.classList.remove('show'), 1800);
+        }
+
+        async function copyText(text) {
+            if (navigator.clipboard && window.isSecureContext) {
+                await navigator.clipboard.writeText(text);
+                return;
+            }
+            const ta = document.createElement('textarea');
+            ta.value = text;
+            ta.setAttribute('readonly', '');
+            ta.style.position = 'fixed';
+            ta.style.left = '-9999px';
+            ta.style.top = '-9999px';
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            document.body.removeChild(ta);
+        }
+
+        function extractTileText(tile) {
+            const titleEl = tile.querySelector('.title');
+            const hintEl = tile.querySelector('.hint');
+
+            const titleClone = titleEl.cloneNode(true);
+            titleClone.querySelectorAll('.chip').forEach(ch => ch.remove());
+            const cleanTitle = titleClone.textContent.replace(/\s+/g, ' ').trim();
+
+            const hintClone = hintEl.cloneNode(true);
+            hintClone.querySelectorAll('br').forEach(br => br.replaceWith('\n'));
+            const cleanHint = hintClone.textContent
+                .replace(/\n{3,}/g, '\n\n')
+                .replace(/[ \t]+\n/g, '\n')
+                .trim();
+
+            return `${cleanTitle}\n\n${cleanHint}`.trim();
+        }
+
+        document.querySelectorAll('[data-copy]').forEach(tile => {
+            tile.addEventListener('click', async () => {
+                const text = extractTileText(tile);
+
+                try {
+                    await copyText(text);
+
+                    tile.classList.add('copied');
+                    setTimeout(() => tile.classList.remove('copied'), 650);
+
+                    const subjectName = tile.querySelector('.title')?.textContent?.trim() || 'Предмет';
+                    showToast('Скопировано', `${subjectName} — скопировано в буфер обмена.`);
+                } catch (e) {
+                    showToast('Не удалось скопировать', 'Браузер запретил доступ к буферу обмена.');
+                    console.error(e);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
