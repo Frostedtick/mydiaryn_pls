@@ -406,3 +406,48 @@
                 0 0 0 1px rgba(255, 120, 120, .35) inset,
                 0 6px 18px rgba(255, 0, 0, .3); /* Умеренная красная тень при нажатии */
         }
+
+        .hw-not {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 10px;
+        
+            padding: 8px 14px;
+            border-radius: 999px;
+        
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: .2px;
+        
+            color: rgba(255, 245, 200, .95);
+            text-decoration: none;
+        
+            background: linear-gradient(
+                180deg,
+                rgba(255, 210, 80, .32),
+                rgba(255, 210, 80, .14)
+            );
+            border: 1px solid rgba(255, 220, 120, .45);
+        
+            box-shadow:
+                0 0 0 1px rgba(255, 220, 120, .15) inset,
+                0 8px 24px rgba(255, 200, 0, .25);
+        
+            transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+        }
+        
+        .hw-not:hover {
+            transform: translateY(-1px);
+            border-color: rgba(255, 235, 160, .7);
+            box-shadow:
+                0 0 0 1px rgba(255, 220, 120, .3) inset,
+                0 12px 32px rgba(255, 200, 0, .4);
+        }
+        
+        .hw-not:active {
+            transform: translateY(0);
+            box-shadow:
+                0 0 0 1px rgba(255, 220, 120, .35) inset,
+                0 6px 18px rgba(255, 200, 0, .3);
+        }
